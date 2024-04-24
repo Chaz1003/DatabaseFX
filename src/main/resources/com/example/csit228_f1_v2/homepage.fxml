@@ -1,27 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.HomeController">
-   <children>
-      <ComboBox layoutX="84.0" layoutY="76.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="84.0" layoutY="124.0" prefWidth="150.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
-      <ProgressBar fx:id="pbProgress" layoutX="252.0" layoutY="334.0" prefWidth="200.0" progress="0.33" />
-      <ProgressIndicator fx:id="piProgress" layoutX="473.0" layoutY="314.0" progress="0.9" />
-      <Spinner layoutX="85.0" layoutY="175.0" />
-      <SplitMenuButton layoutX="84.0" layoutY="33.0" mnemonicParsing="false" text="SplitMenuButton">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </SplitMenuButton>
-      <Slider fx:id="slSlider" layoutX="352.0" layoutY="69.0" onMouseDragged="#onSliderChange" value="90.0" />
-      <ToggleButton fx:id="tbNight" layoutX="466.0" layoutY="20.0" mnemonicParsing="false" onAction="#onNightModeClick" text="Night Mode" />
-      <TreeView layoutX="386.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
-      <PieChart layoutX="200.0" layoutY="175.0" prefHeight="129.0" prefWidth="149.0" />
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="641.0" style="-fx-background-color: #B71C1C;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.TableViewController">
+
+    <children>
+        <VBox fx:id="paneLogout" prefHeight="452.0" prefWidth="641.0">
+            <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#onClickLogout" text="Logout" />
+
+
+            <Pane layoutY="59.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <Text layoutX="26.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Archive" wrappingWidth="245.13671875">
+                <font>
+                    <Font name="Bookman Old Style" size="47.0" />
+                </font>
+            </Text>
+
+            <HBox alignment="CENTER_LEFT" layoutX="34.0" layoutY="73.0" prefHeight="76.0" prefWidth="200.0">
+                <children>
+                    <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#onClickDisplayAdd" text="ADD">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refreshTable" text="REFRESH">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </Button>
+                </children>
+            </HBox>
+            <TableView fx:id="archiveTable" layoutX="34.0" layoutY="157.0" prefHeight="265.0" prefWidth="574.0">
+                <columns>
+                    <TableColumn fx:id="titleCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center;" text="TITLE" />
+                    <TableColumn fx:id="linkCol" maxWidth="300" prefWidth="300" style="-fx-alignment: center;" text="LINK" />
+                    <TableColumn fx:id="editCol" maxWidth="85.0" prefWidth="85.0" style="-fx-alignment: center;" text="EDIT" />
+                </columns>
+            </TableView>
+        </VBox>
+    </children>
 </AnchorPane>

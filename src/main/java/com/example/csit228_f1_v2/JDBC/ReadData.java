@@ -1,27 +1,37 @@
 package com.example.csit228_f1_v2.JDBC;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ReadData {
-    public static void main(String[] args) {
+    public static int ifExists(String uname) {
         try(Connection c = MySQLConnection.getConnection();
-            Statement statement = c.createStatement()
-            ) {
-            String query = "SELECT * FROM users";
-            ResultSet res = statement.executeQuery(query);
-            while(res.next()){
-                int id = res.getInt("id");
-                String name = res.getString("name");
-                String email = res.getString("email");
-                System.out.println("\nID: " + id);
-                System.out.println("Name: " + name);
-                System.out.println("Email: " + email);
+            PreparedStatement statement = c.prepareStatement("SELECT COUNT(*) FROM tblaccounts WHERE username = ?");
+        ) {
+
+            statement.setString(1,uname);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return 0;
+    }
+    public static int checkUser(String uname, String pword) {
+        try(Connection c = MySQLConnection.getConnection();
+            PreparedStatement statement = c.prepareStatement("SELECT * FROM tblaccounts WHERE username = ? AND password = ?");
+        ) {
+
+            statement.setString(1,uname);
+            statement.setString(2,pword);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

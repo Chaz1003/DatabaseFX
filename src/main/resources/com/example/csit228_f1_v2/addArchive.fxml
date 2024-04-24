@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="371.0" style="-fx-background-color: #B71C1C;" styleClass="btn" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csit228_f1_v2.AddArchiveController">
+
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="384.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Details">
+                    <font>
+                        <Font name="Bookman Old Style" size="49.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Text>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Title" wrappingWidth="102.13671875">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="txtTitle" prefHeight="25.0" prefWidth="358.0">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </TextField>
+            </children>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Link" wrappingWidth="102.13671875">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+                <TextField fx:id="txtLink" prefHeight="25.0" prefWidth="358.0">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </TextField>
+            </children>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="384.0">
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+            <children>
+                <Button onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #00E676;" styleClass="btn" text="Save">
+                    <HBox.margin>
+                        <Insets right="8.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Century Gothic" size="24.0" />
+                    </font>
+                </Button>
+                <Button layoutX="132.0" layoutY="19.0" onMouseClicked="#clean" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" styleClass="btn" text="Clean">
+                    <HBox.margin>
+                        <Insets left="8.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Century Gothic" size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+    </padding>
+</VBox>

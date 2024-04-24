@@ -9,7 +9,7 @@ public class UpdateData {
         try(Connection c = MySQLConnection.getConnection();
             PreparedStatement statement = c.prepareStatement(
                     "UPDATE users SET name=? WHERE id=?"
-        )){
+            )){
             String name = "Someone";
             int id = 2;
             statement.setInt(2,id);
